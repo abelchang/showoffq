@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use App\Qtitle as QtitleEloquent;
-use App\User as UserEloquent;
 
-class DatabaseSeeder extends Seeder
+class qtitle extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,12 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-    	$user = UserEloquent::create([
-    		'name'=>'Abel',
-    		'email'=>'ccabel42@gmail.com',
-    		'password'=>bcrypt('2uiiggii')
-    		]);
-    	
         $title1 = QtitleEloquent::create([
         	'no' => 1,
             'title' => "是否曾經在搜尋自己車子的型號搭配想要的輪框、尺寸或是想要的貼膜彩繪拉花，而花上很多時間依舊找不到呢？"
@@ -53,7 +46,5 @@ class DatabaseSeeder extends Seeder
             'no' => 7,
         	'title' => "有什麼建議或需求?"
         ]);
-
-
     }
 }

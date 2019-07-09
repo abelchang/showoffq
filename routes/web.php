@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('finish', 'QanswerController@finish')->name('qanswer.finish');
+
+Route::resource('qanswer','QanswerController');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
