@@ -351,6 +351,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 <!-- Footer -->
                     <footer id="footer">
                         <p class="copyright">&copy; Untitled. Design: <a href="https://www.facebook.com/ccabel42">Abel Chang</a>.</p>
+                        <p class="copyright"><a href="mailto:ccabel42@gmail.com" target="_blank">ccabael42@gmail.com</a></p>
                     </footer>
 
             </div>
