@@ -99,6 +99,29 @@ class QanswerController extends Controller
         return View::make('qanswer.finish');
     }
 
+    public function qstatistics()
+    {
+        $qtitle = QtitleEloquent::orderBy('id','ASC')->get();
+        $qTotal = QanswerEloquent::count();
+        $q1y = QanswerEloquent::where('q1', '=', 1)->count();
+        $q1n = QanswerEloquent::where('q1', '=', -1)->count();
+        $q2y = QanswerEloquent::where('q2', '=', 1)->count();
+        $q2n = QanswerEloquent::where('q2', '=', -1)->count();
+        $q4y = QanswerEloquent::where('q4', '=', 1)->count();
+        $q4n = QanswerEloquent::where('q4', '=', -1)->count();
+        $q5y = QanswerEloquent::where('q5', '=', 1)->count();
+        $q5n = QanswerEloquent::where('q5', '=', -1)->count();
+        $answerTotal = array(
+            'q1y' => $q1y, 'q1n' => $q1n,
+            'q2y' => $q2y, 'q2n' => $q2n,
+            'q4y' => $q4y, 'q4n' => $q4n,
+            'q5y' => $q5y, 'q5n' => $q5n
+         );
+
+        return View::make('qanswer.qstatistics',[ 'qTotal' => $qTotal , 'qTitle'=> $qtitle ,'answerTotal'=>$answerTotal]);
+
+    }
+
     // $validator = Validator::make (
     //     $request->all(),
     //     [

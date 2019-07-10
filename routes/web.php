@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('finish', 'QanswerController@finish')->name('qanswer.finish');
+Route::get('qanswer/qstatistics','QanswerController@qstatistics')->name('qanswer.qstatistics')->middleware('auth');;
+
 
 Route::resource('qanswer','QanswerController');
 

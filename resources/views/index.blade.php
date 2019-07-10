@@ -51,7 +51,7 @@
 							<ul>
 								<li><a href="{{ route('qanswer.create',['#elements'])}}">開始問卷</a></li>
 								@if(Auth::check())
-								<li><a href="#work">問卷統計</a></li>
+								<li><a href="{{ route('qanswer.qstatistics')}}">問卷統計</a></li>
 								@endif
 							</ul>
 						</nav>
