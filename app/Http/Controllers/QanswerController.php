@@ -122,6 +122,20 @@ class QanswerController extends Controller
 
     }
 
+    public function getanwser($id)
+    {
+        if($id != null )
+        {
+            $index = 'q'.$id;
+            $answer = QanswerEloquent::where($index , '!=', null)->select($index)->get();
+            $qtitle = QtitleEloquent::findOrFail($id);
+            
+            return View::make('qanswer.getanwser',[ 'index'=>$index ,'answer'=> $answer ,'qtitle'=>$qtitle]);
+        }
+        else
+            return Redirect('/');
+    }
+
     // $validator = Validator::make (
     //     $request->all(),
     //     [

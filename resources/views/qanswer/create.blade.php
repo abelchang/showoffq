@@ -71,12 +71,12 @@
 										{{ csrf_field()}}
 										<div class="fields">
 											<div class="field half">
-												<label for="email">Email</label>
+												<label for="email" style="font-size= 1rem;">Email</label>
 												<input type="email" name="email" id="email" value="" placeholder="abel@gmail.com" required/>
 											</div>
 											@foreach($qtitle as $title)
-												<div class="field">
-													<label for="message">{{$title->no}}.{{$title->title}}</label>
+												<div class="field" style="margin: 1rem 0 1rem 0;">
+													<label for="message" style="font-size= 1rem;">{{$title->no}}.{{$title->title}}</label>
 												@if($title->no == 3 || $title->no == 6 || $title->no == 7)
 													<textarea name="q{{$title->no}}" id="" placeholder="留下您的建言" rows="3"></textarea>
 												@else
