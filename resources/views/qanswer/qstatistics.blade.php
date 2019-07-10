@@ -15,8 +15,8 @@
 	                		<p> {{$title->no}}.{{ $title->title }}</p>
 	                	</div>
             			<div class="answer">
-					      <p>是：{{$answerTotal["q".$title->no."y"]}} / {{ ($answerTotal["q".$title->no."y"]/$qTotal*100)."%"}}</p>
-					      <p>否：{{$answerTotal["q".$title->no."n"]}} / {{ ($answerTotal["q".$title->no."n"]/$qTotal*100)."%"}}</p>
+					      <p>是：{{$answerTotal["q".$title->no."y"]}} / {{ (round($answerTotal["q".$title->no."y"]/($qTotal==0?1:$qTotal),2)*100)."%"}}</p>
+					      <p>否：{{$answerTotal["q".$title->no."n"]}} / {{ (round($answerTotal["q".$title->no."n"]/($qTotal==0?1:$qTotal),2)*100)."%"}}</p>
 					    </div>	
                 	</div>
                 	@endif
